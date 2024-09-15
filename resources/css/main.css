@@ -1,0 +1,15 @@
+*{
+	scroll-behavior: smooth !important;
+	word-break: break-all;
+	scrollbar-width: thin;
+}
+*::-webkit-scrollbar{ width: 5px; /* background-color: hsla(26.9, 100%, 80.6%, 1); */ border-radius: 10px; }
+*::-webkit-scrollbar-thumb{ /* background-color: hsla(26.9, 100%, 60.6%, 1); */ border-radius: 10px; }
+
+.Fade{
+	animation: fade-anim .6s;
+}
+@keyframes fade-anim{
+	0%{opacity: 0;transform: translateY(5%) scale(.9);}
+	100%{opacity: 1;transform: none;}
+}

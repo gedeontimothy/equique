@@ -1,0 +1,72 @@
+@font-face {
+	font-family: "Jost Black";
+	src: local("Jost Black"), url('../js/assets/fonts/SansSerif/jost/black.woff') format('woff');
+}
+@font-face {
+	font-family: "Jost Black Italic";
+	src: local("Jost Black Italic"), url('../js/assets/fonts/SansSerif/jost/black_italic.woff') format('woff');
+}
+@font-face {
+	font-family: "Jost Bold";
+	src: local("Jost Bold"), url('../js/assets/fonts/SansSerif/jost/bold.woff') format('woff');
+}
+@font-face {
+	font-family: "Jost Bold Italic";
+	src: local("Jost Bold Italic"), url('../js/assets/fonts/SansSerif/jost/bold_italic.woff') format('woff');
+}
+@font-face {
+	font-family: "Jost ExtraBold";
+	src: local("Jost ExtraBold"), url('../js/assets/fonts/SansSerif/jost/extra_bold.woff') format('woff');
+}
+@font-face {
+	font-family: "Jost ExtraBold Italic";
+	src: local("Jost ExtraBold Italic"), url('../js/assets/fonts/SansSerif/jost/extra_bold_italic.woff') format('woff');
+}
+@font-face {
+	font-family: "Jost ExtraLight";
+	src: local("Jost ExtraLight"), url('../js/assets/fonts/SansSerif/jost/extra_light.woff') format('woff');
+}
+@font-face {
+	font-family: "Jost ExtraLight Italic";
+	src: local("Jost ExtraLight Italic"), url('../js/assets/fonts/SansSerif/jost/extra_light_italic.woff') format('woff');
+}
+@font-face {
+	font-family: "Jost Italic";
+	src: local("Jost Italic"), url('../js/assets/fonts/SansSerif/jost/italic.woff') format('woff');
+}
+@font-face {
+	font-family: "Jost Light";
+	src: local("Jost Light"), url('../js/assets/fonts/SansSerif/jost/light.woff') format('woff');
+}
+@font-face {
+	font-family: "Jost Lightitalic";
+	src: local("Jost Lightitalic"), url('../js/assets/fonts/SansSerif/jost/lightItalic.woff') format('woff');
+}
+@font-face {
+	font-family: "Jost Medium";
+	src: local("Jost Medium"), url('../js/assets/fonts/SansSerif/jost/medium.woff') format('woff');
+}
+@font-face {
+	font-family: "Jost Medium Italic";
+	src: local("Jost Medium Italic"), url('../js/assets/fonts/SansSerif/jost/medium_italic.woff') format('woff');
+}
+@font-face {
+	font-family: "Jost Regular";
+	src: local("Jost Regular"), url('../js/assets/fonts/SansSerif/jost/regular.woff') format('woff');
+}
+@font-face {
+	font-family: "Jost SemiBold";
+	src: local("Jost SemiBold"), url('../js/assets/fonts/SansSerif/jost/semi_bold.woff') format('woff');
+}
+@font-face {
+	font-family: "Jost SemiBold Italic";
+	src: local("Jost SemiBold Italic"), url('../js/assets/fonts/SansSerif/jost/semi_bold_italic.woff') format('woff');
+}
+@font-face {
+	font-family: "Jost Thin";
+	src: local("Jost Thin"), url('../js/assets/fonts/SansSerif/jost/thin.woff') format('woff');
+}
+@font-face {
+	font-family: "Jost Thin Italic";
+	src: local("Jost Thin Italic"), url('../js/assets/fonts/SansSerif/jost/thin_italic.woff') format('woff');
+}

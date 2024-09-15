@@ -1,2 +1,7 @@
 @import './base.css';
 @import '/node_modules/flowbite-vue/dist/index.css';
+@import './fonts.css';
+@import './f-family.css';
+@import './_colors/first.css';
+@import './_colors/second.css';
+@import './main.css';
