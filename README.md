@@ -1,4 +1,4 @@
-# strong-space-desktop
+# equique
 
 An Electron application with Vue
 
