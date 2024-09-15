@@ -26,7 +26,9 @@ $ php artisan serve
 ```bash
 $ npm run dev
 ```
-
+---
+---
+---
 
 
 
@@ -99,7 +101,9 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
 
-
+---
+---
+---
 
 
 
@@ -124,7 +128,9 @@ A huge thanks to all [our sponsors](https://inertiajs.com/sponsors) who help pus
 If you'd like to become a sponsor, please [see here](https://github.com/sponsors/reinink) for more information. 💜
 
 
-
+---
+---
+---
 
 
 
