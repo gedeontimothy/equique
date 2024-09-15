@@ -4,6 +4,8 @@ use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 use App\Http\Middleware\HandleInertiaRequests;
+use App\Http\Middleware\LanguageSetLocale;
+use App\Http\Middleware\EnsureIsManager;
 
 return Application::configure(basePath: dirname(__DIR__))
 	->withRouting(
@@ -12,9 +14,15 @@ return Application::configure(basePath: dirname(__DIR__))
 		health: '/up',
 	)
 	->withMiddleware(function (Middleware $middleware) {
-		$middleware->web(append: [
-			HandleInertiaRequests::class,
-		]);
+		$middleware
+			->web(append: [
+				LanguageSetLocale::class,
+				HandleInertiaRequests::class,
+			])
+			->alias(aliases: [
+				'manager' => EnsureIsManager::class,
+			])
+		;
 	})
 	->withExceptions(function (Exceptions $exceptions) {
 		//
