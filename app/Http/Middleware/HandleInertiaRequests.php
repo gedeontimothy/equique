@@ -4,6 +4,9 @@ namespace App\Http\Middleware;
 
 use Illuminate\Http\Request;
 use Inertia\Middleware;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\File;
 
 class HandleInertiaRequests extends Middleware
 {
@@ -36,7 +39,16 @@ class HandleInertiaRequests extends Middleware
     public function share(Request $request): array
     {
         return array_merge(parent::share($request), [
-            //
+            'csrf' => csrf_token(),
+            'auth' => fn () => [
+                'user' => $request->user() ? [
+                    ...$request->user()->toArray(),
+                    'person' => $request->user()->person,
+                ] : null,
+            ],
+            // 'test' => fn () => random_int(0,9000),
+            'locale' => App::currentLocale(),
+            'session' => session()->all(),
         ]);
     }
 }
