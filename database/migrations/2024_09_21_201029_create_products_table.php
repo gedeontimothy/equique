@@ -11,15 +11,13 @@ return new class extends Migration
 	 */
 	public function up(): void
 	{
-		Schema::create('files', function (Blueprint $table) {
+		Schema::create('products', function (Blueprint $table) {
 			$table->id();
 			$table->string('name');
-			$table->string('original_name')->nullable();
-			$table->text('url')->unique()->nullable();
-			$table->text('path_file')->nullable();
-			$table->double('size')->nullable();
-			$table->string('mime_type')->nullable();
-			$table->softDeletes();
+			$table->longText('description')->nullable();
+			$table->double('price');
+			$table->integer('stock')->default(0);
+            $table->softDeletes();
 			$table->timestamps();
 		});
 	}
@@ -29,6 +27,6 @@ return new class extends Migration
 	 */
 	public function down(): void
 	{
-		Schema::dropIfExists('files');
+		Schema::dropIfExists('products');
 	}
 };
