@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 use App\Casts\UserIsCast;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -62,6 +63,16 @@ class User extends Authenticatable implements MustVerifyEmail
 	public function person() : BelongsTo
 	{
 		return $this->belongsTo(Person::class);
+	}
+
+	/**
+	 * Get notifications relationship
+	 * 
+	 * @return Illuminate\Database\Eloquent\Relations\HasMany
+	 */
+	public function notifications() : HasMany
+	{
+		return $this->hasMany(Notification::class);
 	}
 
 	/**
