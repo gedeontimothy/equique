@@ -2,6 +2,13 @@
 
 namespace Database\Seeders;
 
+use App\Models\Notification;
+use App\Models\OrderProduct;
+use App\Models\Payment;
+use App\Models\PaymentMethod;
+use App\Models\ProductCategory;
+use App\Models\ProductFile;
+use App\Models\Subscriber;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -21,9 +28,19 @@ class DatabaseSeeder extends Seeder
 		// ]);
 
 		$this->call([
-			FileTableSeeder::class,
-			PersonTableSeeder::class,
-			UserTableSeeder::class,
+			// FileTableSeeder::class,
+			// PersonTableSeeder::class,
+			// UserTableSeeder::class,
+			CategoryTableSeeder::class,
+			SubscriberTableSeeder::class,
+			ProductTableSeeder::class,
+			PaymentMethodTableSeeder::class,
+			ProductFileTableSeeder::class,
+			NotificationTableSeeder::class,
+			ProductCategoryTableSeeder::class,
+			PaymentTableSeeder::class,
+			OrderTableSeeder::class,
+			OrderProductTableSeeder::class,
 		]);
 	}
 }
