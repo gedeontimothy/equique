@@ -20,7 +20,7 @@ class ProductCategoryFactory extends Factory
     {
         return [
 			'product_id' => fn () => \App\Models\Product::inRandomOrder()->take(1)->first()->id,
-			'category_id' => fn () => \App\Models\Category::factory()->create()->id
+			'category_id' => fn () => \App\Models\Category::inRandomOrder()->take(1)->first()->id,
 		];
     }
 }

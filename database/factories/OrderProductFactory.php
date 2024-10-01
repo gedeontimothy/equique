@@ -22,7 +22,7 @@ class OrderProductFactory extends Factory
 		return [
 			'order_id' => fn() => \App\Models\Order::inRandomOrder()->take(1)->first()->id,
 			'product_id' => fn() => $product->id,
-			'price' => $product->price,
+			'price' => $product->price * $qt,
 			'quantity' => $qt,
 			'quantity_distributed' => $qt_ds,
 		];

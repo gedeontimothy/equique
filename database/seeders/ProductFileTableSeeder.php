@@ -15,7 +15,8 @@ class ProductFileTableSeeder extends Seeder
 	{
 		ProductFile::factory()->count(10)->create([
 			'file_id' => fn () => \App\Models\File::factory([
-				'url' => fn () => 'http://cdn.net/image/30/' . random_int(0, 1076) . '.jpg',
+				'url' => fn () => 'http://cdn.net/image/40/' . fake()->unique()->numberBetween(1, 147) . '?resize&category=product,electronic',
+				// 'url' => fn () => 'http://cdn.net/image/30/' . random_int(1, 1076) . '.jpg',
 				'path_file' => null,
 			])->create()->id
 		]);

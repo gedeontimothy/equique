@@ -30,7 +30,7 @@ class DatabaseSeeder extends Seeder
 		$this->call([
 			// FileTableSeeder::class,
 			// PersonTableSeeder::class,
-			// UserTableSeeder::class,
+			UserTableSeeder::class,
 			CategoryTableSeeder::class,
 			SubscriberTableSeeder::class,
 			ProductTableSeeder::class,
@@ -38,9 +38,9 @@ class DatabaseSeeder extends Seeder
 			ProductFileTableSeeder::class,
 			NotificationTableSeeder::class,
 			ProductCategoryTableSeeder::class,
-			PaymentTableSeeder::class,
+			// PaymentTableSeeder::class,
 			OrderTableSeeder::class,
-			OrderProductTableSeeder::class,
+			// OrderProductTableSeeder::class,
 		]);
 	}
 }

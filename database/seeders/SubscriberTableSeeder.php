@@ -12,7 +12,12 @@ class SubscriberTableSeeder extends Seeder
 	 * Run the database seeds.
 	 */
 	public function run(): void
-	{
-		Subscriber::factory()->count(10)->create();
+	{	
+
+		if(Subscriber::count() == 0)
+			Subscriber::factory()->create(['email' => 'gedeonbateko3@gmail.com']);
+
+		Subscriber::factory()->count(3)->create();
+
 	}
 }

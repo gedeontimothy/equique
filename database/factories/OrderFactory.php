@@ -21,7 +21,7 @@ class OrderFactory extends Factory
 			'user_id' => fn() => \App\Models\User::inRandomOrder()->take(1)->first()->id,
 			'payment_id' => fn() => \App\Models\Payment::factory()->create()->id,
 			'purchase_price' => $this->faker->randomFloat(2, 0.3, 299.99),
-			'status' => (string) random_int(0, 4),
+			'status' => (string) random_int(0, 4), // 0:canceled 1:pending 2:success 3:in-progress-of-delivery 4:in-progress-of-refunded
 			'bought_at' => $this->faker->dateTimeBetween("-9672 hours", "now"),
 		];
 	}

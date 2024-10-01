@@ -20,7 +20,7 @@ class SubscriberFactory extends Factory
 		return [
 			'email' => $this->faker->unique()->safeEmail,
 			'code' => uniqid(more_entropy : true),
-			'interaction' => ((bool) random_int(0, 5)) ? null :  random_int(1, 12),
+			'interaction' => ((bool) random_int(0, 5)) ? 0 :  random_int(1, 12),
 		];
 	}
 }

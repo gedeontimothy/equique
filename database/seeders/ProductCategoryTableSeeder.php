@@ -13,6 +13,6 @@ class ProductCategoryTableSeeder extends Seeder
 	 */
 	public function run(): void
 	{
-		ProductCategory::factory()->count(10)->create();
+		ProductCategory::factory()->count(50)->create();
 	}
 }

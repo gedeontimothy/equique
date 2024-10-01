@@ -21,7 +21,7 @@ class PaymentFactory extends Factory
 			'payment_method_id' => fn() => \App\Models\PaymentMethod::inRandomOrder()->take(1)->first()->id,
 			'purchase_price' => $this->faker->randomFloat(2, 0.3, 1299.99),
 			'tax_price' => $this->faker->randomFloat(2, 0.01, 1.99),
-			'status' => random_int(0, 4),
+			'status' => random_int(0, 4), // 0:canceled 1:pending 2:success 3:refunded
 		];
 	}
 }
