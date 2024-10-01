@@ -16,7 +16,7 @@ return new class extends Migration
 			$table->foreignId('payment_method_id')->constrained()->cascadeOnUpdate()->nullOnDelete();
 			$table->double('purchase_price');
 			$table->double('tax_price')->nullable();
-			$table->enum('status', [0, 1, 2, 3, 4]);
+			$table->enum('status', [0, 1, 2, 3, 4]); // 0:canceled 1:pending 2:success 3:refunded
 			$table->softDeletes();
 			$table->timestamps();
 		});

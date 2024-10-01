@@ -21,7 +21,7 @@ class Order extends Model
 		"user_id",
 		"payment_id",
 		"purchase_price",
-		"status",
+		"status", // 0:canceled 1:pending 2:success 3:in-progress-of-delivery 4:in-progress-of-refunded
 		"bought_at",
 	];
 

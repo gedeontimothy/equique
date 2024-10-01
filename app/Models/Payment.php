@@ -21,7 +21,7 @@ class Payment extends Model
 		"payment_method_id",
 		"purchase_price",
 		"tax_price",
-		"status",
+		"status", // 0:canceled 1:pending 2:success 3:refunded
 	];
 
 	/**

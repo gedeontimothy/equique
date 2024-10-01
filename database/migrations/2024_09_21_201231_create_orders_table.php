@@ -16,7 +16,7 @@ return new class extends Migration
 			$table->foreignId('user_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
 			$table->foreignId('payment_id')->nullable()->constrained()->cascadeOnUpdate()->cascadeOnDelete();
 			$table->double('purchase_price')->nullable();
-			$table->enum('status', [0, 1, 2, 3, 4])->default(0);
+			$table->enum('status', [0, 1, 2, 3, 4])->default(1); // 0:canceled 1:pending 2:success 3:in-progress-of-delivery 4:in-progress-of-refunded
 			$table->timestamp('bought_at')->nullable();
 			$table->softDeletes();
 			$table->timestamps();
