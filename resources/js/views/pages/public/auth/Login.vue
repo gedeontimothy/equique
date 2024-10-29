@@ -29,14 +29,14 @@ const handleForm = (el) => {
 					key : 'login',
 					type : 'main',
 					datas : {
-						title : "Tentative de connexion...",
+						title : __('auth.login.try-connect'),
 					},
 					active : true,
 				});
 			else
 				store.dispatch('area/updateArea', {
 					key : 'login',
-					datas : { title : "Reconnexion...", closeIcon : false, color : null, description : null, spinner : true },
+					datas : { title : __('auth.login.retry-connect'), closeIcon : false, color : null, description : null, spinner : true },
 					merge : true,
 				});
 			displayError.value = false;
@@ -48,7 +48,7 @@ const handleForm = (el) => {
 			store.commit('app/setPageProps', {value : page.props});
 			store.dispatch('area/updateArea', {
 				key : 'login',
-				datas : { title : "Connected !", closeIcon : true, color : 'success', description : `Ravie de vous voir ${store.getters['app/auth_person']('name')}`, spinner : false },
+				datas : { title : __('auth.login.connect'), closeIcon : true, color : 'success', description : __('auth.login.connect-description', {name : store.getters['app/auth_person']('name')}), spinner : false },
 				merge : true,
 			});
 		},
@@ -57,7 +57,7 @@ const handleForm = (el) => {
 
 			store.dispatch('area/updateArea', {
 				key : 'login',
-				datas : { title : "Echec de connexion...", closeIcon : true, spinner : false, color : 'danger', description : '<ul class="list-disc list-inside"><li>'+Object.values(loginForm.errors).join("</li><li>")+'</li></ul>' },
+				datas : { title : __('auth.login.failed-connect'), closeIcon : true, spinner : false, color : 'danger', description : '<ul class="list-disc list-inside"><li>'+Object.values(loginForm.errors).join("</li><li>")+'</li></ul>' },
 				merge : true,
 			});
 		},
@@ -65,7 +65,7 @@ const handleForm = (el) => {
 }
 </script>
 <template>
-	<LayoutAuth :title="$__('auth.login-title')" :handle-form="handleForm" google>
+	<LayoutAuth :title="$__('auth.login.title')" :handle-form="handleForm" google>
 		<div class="divide-y divide-gray-200 mt-8">
 			<div class="flex flex-col text-base leading-6 space-y-6 text-gray-700 sm:text-lg sm:leading-7">
 				<div>

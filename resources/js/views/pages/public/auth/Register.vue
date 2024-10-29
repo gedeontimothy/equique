@@ -37,14 +37,14 @@ const handleForm = (el) => {
 					key : 'register',
 					type : 'main',
 					datas : {
-						title : "Création du compte en cours...",
+						title : __('auth.register.create'),
 					},
 					active : true,
 				});
 			else
 				store.dispatch('area/updateArea', {
 					key : 'register',
-					datas : { title : "Création du compte en cours...", closeIcon : false, color : null, description : null, spinner : true },
+					datas : { title : __('auth.register.create'), closeIcon : false, color : null, description : null, spinner : true },
 					merge : true,
 				});
 			displayError.value = false;
@@ -56,7 +56,7 @@ const handleForm = (el) => {
 			store.commit('app/setPageProps', {value : page.props});
 			store.dispatch('area/updateArea', {
 				key : 'register',
-				datas : { title : "Votre compte a été créer !", closeIcon : true, color : 'success', description : `Bienvenu ${store.getters['app/auth_person']('name')} sur Equique`, spinner : false },
+				datas : { title : __('auth.register.create-success'), closeIcon : true, color : 'success', description : __('auth.register.create-description', {name : store.getters['app/auth_person']('name')}), spinner : false },
 				merge : true,
 			});
 		},
@@ -64,7 +64,7 @@ const handleForm = (el) => {
 			displayError.value = true;
 			store.dispatch('area/updateArea', {
 				key : 'register',
-				datas : { title : "Echec de création de compte", closeIcon : true, spinner : false, color : 'danger', description : '<ul class="list-disc list-inside"><li>'+Object.values(registerForm.errors).join("</li><li>")+'</li></ul><span class="text-base ff-jost">Resolvez l\'erreur si possible et réessayez s\'il vous plaît !</span>' },
+				datas : { title : __('auth.register.create-failed'), closeIcon : true, spinner : false, color : 'danger', description : '<ul class="list-disc list-inside"><li>'+Object.values(registerForm.errors).join("</li><li>")+'</li></ul><span class="text-base ff-jost">Resolvez l\'erreur si possible et réessayez s\'il vous plaît !</span>' },
 				merge : true,
 			});
 		},
@@ -72,7 +72,7 @@ const handleForm = (el) => {
 }
 </script>
 <template>
-	<LayoutAuth :title="$__('auth.register-title')" :handle-form="handleForm" enlarge google>
+	<LayoutAuth :title="$__('auth.register.title')" :handle-form="handleForm" enlarge google>
 		<div class="divide-y divide-gray-200 mt-8">
 			<div class="flex flex-row flex-wrap text-base leading-6 text-gray-700 sm:text-lg sm:leading-7">
 				<div class="px-3 py-5 w-1/2">
