@@ -43,7 +43,10 @@ class HandleInertiaRequests extends Middleware
             'auth' => fn () => [
                 'user' => $request->user() ? [
                     ...$request->user()->toArray(),
-                    'person' => $request->user()->person,
+                    'person' => [
+                        ...$request->user()->person->toArray(),
+                        'file' => $request->user()->person->file
+                    ],
                 ] : null,
             ],
             // 'test' => fn () => random_int(0,9000),
