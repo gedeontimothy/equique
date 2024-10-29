@@ -20,8 +20,21 @@ return [
 		'description' => "Merci pour votre inscription ! \nAvant de commencer, pourriez-vous vérifier votre adresse email en cliquant sur le lien que nous venons de vous envoyer ? Si vous n'avez pas reçu l'email, nous vous en enverrons volontiers un autre.",
 		'link-resent' => 'Un nouveau lien de vérification a été envoyé à votre adresse e-mail :email',
 	],
-	'register-title' => 'Inscription',
-	'login-title' => 'Connexion',
+	'register' => [
+		'title' => 'Inscription',
+		'auth.register.create' => "Création du compte en cours...",
+		'auth.register.create-success' => "Votre compte a été créer !",
+		'auth.register.create-description' => "Bienvenue :name sur Equique",
+		'auth.register.create-failed' => "Échec de la création du compte !",
+	],
+	'login' => [
+		'title' => 'Connexion',
+		'connect' => 'Connecté !',
+		'connect-description' => 'Ravie de vous voir :name',
+		'try-connect' => 'Tentative de connexion...',
+		'retry-connect' => 'Reconnexion...',
+		'failed-connect' => 'Echec de connexion...',
+	],
 	'not-account' => ['Vous n\'avez pas de compte ?', 'S\'inscrire'],
 	'already-account' => ['Vous avez déjà un compte ?', 'Se connecter'],
 	'label' => [
