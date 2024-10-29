@@ -14,7 +14,7 @@ class UserIsCast implements CastsAttributes
 	 */
 	public function get(Model $model, string $key, mixed $value, array $attributes): mixed
 	{
-		return $value ? ['super', 'admin', 'agent'][(int) $value] : 'user';
+		return $value !== null ? ['super', 'admin', 'agent'][(int) $value] : 'user';
 	}
 
 	/**
