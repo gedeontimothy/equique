@@ -1,6 +1,6 @@
 # equique
 
-An Laravel and Inertia app with Vue
+An Laravel application with Inertia and Vue
 
 ## Project Setup
 

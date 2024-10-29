@@ -9,7 +9,7 @@ export default {
   'node_modules/flowbite/**/*.{js,jsx,ts,tsx}',
   ],
   theme: {
-	extend: {},
+	extend: {screens: {/* '3xs' : '320px',  */'xxs' : '480px'/* , 'xs' : '540px', */}},
   },
   plugins: [
     require('flowbite/plugin')
