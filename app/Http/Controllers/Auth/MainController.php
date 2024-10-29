@@ -41,7 +41,7 @@ class MainController extends \App\Http\Controllers\Controller
 
 		$request->session()->regenerate();
 
-		return redirect()->intended(isset($_GET['next']) ? $_GET['next'] : $this->redirect_after_login);
+		return redirect()->intended(isset($_GET['next']) ? $_GET['next'] : (Auth::user()->isManager() ? '/dashboard' : $this->redirect_after_login));
 
 	}
 
