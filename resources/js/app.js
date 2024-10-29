@@ -1,6 +1,7 @@
 import { createApp, h } from 'vue'
 import { createInertiaApp } from '@inertiajs/vue3'
 import { ZiggyVue } from 'ziggy-js';
+import PrimeVue from 'primevue/config';
 import './bootstrap';
 import Bootstrap from './views/layouts/Bootstrap.vue';
 import store from './store';
@@ -17,6 +18,7 @@ createInertiaApp({
 		createApp({ render: () => h(App, props) })
 			.use(plugin)
 			.use(ZiggyVue)
+			.use(PrimeVue)
 			.use(store)
 			.use(base, store)
 			.use(lang, store)
