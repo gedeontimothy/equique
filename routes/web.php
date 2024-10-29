@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\UserManagerController;
 use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\Api\V1\OrderController;
+use App\Http\Controllers\Api\V1\ProductController;
 
 
 // ===== LANG START
@@ -25,6 +28,18 @@ Route::middleware(['auth', 'verified'])->group(function(){
 	Route::middleware('manager')->group(function(){
 
 		Route::get('/dashboard', [UserManagerController::class, 'dashboard'])->name('dashboard');
+
+		Route::get('/users', [UserController::class, 'index'])->name('users');
+		Route::get('/user/show/{id}', [UserController::class, 'show'])->name('user.show');
+
+		Route::middleware('manager:super,admin')->group(function(){
+			Route::get('/user/create', [UserController::class, 'create'])->name('user.create');
+			Route::get('/user/edit/{id}', [UserController::class, 'edit'])->name('user.edit');
+		});
+
+		Route::get('/order/show/{id}', [OrderController::class, 'show'])->name('order.show');  
+		Route::get('/product/show/{id}', [ProductController::class, 'show'])->name('product.show');  
+
 
 	});
 
