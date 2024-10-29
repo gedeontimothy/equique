@@ -5,7 +5,7 @@ import PrimeVue from 'primevue/config';
 import './bootstrap';
 import Bootstrap from './views/layouts/Bootstrap.vue';
 import store from './store';
-import {base, lang} from './plugins';
+import {base, lang, svg} from './plugins';
 
 createInertiaApp({
 	resolve: (name) => {
@@ -22,6 +22,7 @@ createInertiaApp({
 			.use(store)
 			.use(base, store)
 			.use(lang, store)
+			.use(svg, store)
 			.mount(el);
 	},
 });

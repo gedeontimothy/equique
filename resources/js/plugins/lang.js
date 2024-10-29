@@ -34,6 +34,18 @@ const format = (value) => {
 	}
 }
 
+const replaceKeyValue = (value, keys) => {
+	if(is_object(keys)){
+		for(var k in keys){
+			var val = keys[k];
+			if(is_string(val) || is_number(val) || val === null){
+				value = value.replaceAll(new RegExp(preg_quote(':' + k), 'g'), val);
+			}
+		}
+	}
+	return value;
+}
+
 /**
  * 
  * 
@@ -47,19 +59,11 @@ const getLang = (arg, lang) => {
 	else if(is_string(value)){
 		let lang_value = browse_array_keys(value, lang);
 		if(is_string(lang_value)){
-			if(is_object(key)){
-				for(var k in key){
-					var val = key[k];
-					if(is_string(val) || is_number(val) || val === null){
-						lang_value = lang_value.replaceAll(new RegExp(preg_quote(':' + k), 'g'), val);
-					}
-				}
-			}
-			return lang_value;
+			return replaceKeyValue(lang_value, key);
 		}
 		else if(null_on_not_found) return null;
 	}
-	return value;
+	return is_string(value) && is_object(key) ? replaceKeyValue(value, key) : value;
 }
 
 /**
