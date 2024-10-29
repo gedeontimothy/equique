@@ -110,6 +110,13 @@ export const is_regexp = (obj) => {
 export const is_url = (text) => {
 	const regexp = /^(http[s]?\:\/\/)?[a-z0-9-]{1,5}\.([a-z0-9-_]+)\.[a-z0-9-]{1,5}(:\d{2,4})?(\/.*)?$|^(http[s]?\:\/\/)?([a-z0-9-_]+)\.[a-z0-9-]{1,5}(:\d{2,4})?(\/.*)?$|^(http[s]?\:\/\/)?([a-z0-9-_]+)\.[a-z0-9-]{1,5}(:\d{2,4})?(\/.*)?$/;
 	return regexp.test(text);
+
+	// const regexp = new RegExp('^(https?:\\/\\/)?'+ // protocole (optionnel)
+	// 	'((([a-zA-Z0-9$-_@.&+!*\'(),]+\\.)+[a-zA-Z]{2,})|' + // domaine ou IP
+	// 	'((\\d{1,3}\\.){3}\\d{1,3}))' + // IPv4
+	// 	'(\\:\\d+)?(\\/[-a-zA-Z0-9@:%_+.~#?&//=]*)?$', 'i'); // port et chemin (optionnel)
+	// return regexp.test(str);
+
 	// return /^http[s]?\:\/\/.*|^[a-z0-9-]{1,5}\.([a-z0-9-_]+)\.[a-z0-9-]{1,5}$|^([a-z0-9-_]+)\.[a-z0-9-]{1,5}\/.*$|^([a-z0-9-_]+)\.[a-z0-9-]{1,5}$/i.test(text);
 	// return /^(?:\w+:)?\/\/([^\s.]+\.\S{2}|localhost[:?\d]*)\S*$/i.test(text);
 }
@@ -857,4 +864,15 @@ export const browse_array_keys = (keys, datas, options) => {
 		return tmp;
 	}
 	return default_return;
+}
+
+/**
+ * [ucfirst description]
+ * 
+ * @param  {string}	str
+ * 
+ * @return string
+ */
+export const ucfirst = (str) => {
+	return str.charAt(0).toUpperCase() + str.slice(1);
 }
