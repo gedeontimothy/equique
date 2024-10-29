@@ -50,6 +50,26 @@ const app = {
 			return state.page?.props?.auth?.user != null;
 		},
 
+		is(state, getters){
+			return (type) => state.page?.props?.auth?.user?.is === type;
+		},
+
+		isSuper(state, getters){
+			return getters.is('super');
+		},
+
+		isAdmin(state, getters){
+			return getters.is('admin');
+		},
+
+		isAgent(state, getters){
+			return getters.is('agent');
+		},
+
+		isSimpleUser(state, getters){
+			return getters.is(null);
+		},
+
 		lang(state){
 			return state.page?.props?.lang;
 		},

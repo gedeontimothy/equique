@@ -1,6 +1,7 @@
 import { usePage, router } from '@inertiajs/vue3';
 import * as helper from '../../utils/helpers.native';
 import { getLangAvailable, getCurrentLangDatas, getLangDatas } from '../../services/lang';
+import moment from 'moment';
 
 const getLocalLang = () => {
 	return {
@@ -105,6 +106,7 @@ const app = {
 				commit('setAvailableLanguage', lang.available.datas);
 				commit('setLanguageDatas', lang.datas.datas);
 				commit('setCurrentLanguage', lang.datas.lang);
+				await dispatch('initMoment');
 				commit('setIsInit', true);
 
 				// console.log(state.current_language);
@@ -113,6 +115,14 @@ const app = {
 			}
 			else commit('setIsInit', null);
 			// console.log(getters['currentLang'])
+		},
+
+		async initMoment({state, getters}){
+			switch (state.current_language) {
+				case 'fr':
+					await import('moment/dist/locale/fr');
+					break;
+			}
 		},
 
 		resetLocalLang({commit}, payload){
