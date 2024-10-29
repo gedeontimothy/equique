@@ -33,7 +33,7 @@
 </script>
 <template>
 	<div v-if="items_actived > 0" class="component-loaders-area z-50 fixed bottom-0 right-0 overflow-hidden overflow-y-auto rounded-3xl max-h-full" ref="reduce2">
-		<button @click="areaEvent.unminimize" v-if="minimize" class="minimize-w128 fixed bottom-24 second-color-default hover:second-color-dark-20 dark:second-color-light-5 hover:second-color-dark-20- -translate-x-1/2 flex h-6 w-6 hover:scale-[1.4] transition-all duration-150">
+		<button @click="areaEvent.unminimize" v-if="minimize" class="minimize-w128 fixed bottom-24 first-color-default hover:first-color-dark-20 dark:first-color-light-5 hover:first-color-dark-20- -translate-x-1/2 flex h-6 w-6 hover:scale-[1.4] transition-all duration-150">
 			<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-current opacity-75"></span>
 			<span class="relative inline-flex rounded-full h-full w-full bg-current"></span>
 		</button>

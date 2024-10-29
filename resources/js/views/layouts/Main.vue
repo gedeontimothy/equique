@@ -17,28 +17,12 @@ const profil_image = computed(() => file.value ? file.value.url : null);
 
 // const more = computed(() => store.state.active.more);
 // const menu_act = computed(() => store.state.active.menu);
-// setTimeout(() => {
-// }, 10)
-// const props = defineProps({});
 
-// watch([more, menu_act], (new_val, old_val) => {
-// 	console.log('yop')
-// });
+// const props = defineProps({});
+store.commit('menu/disableActiveMenu');
+store.commit('menu/activeMenu', {name : 'users'})
 
 </script>
 <template>
-	<div class="flex h-screen bg-gray-50 ff-jost">
-		<WindmillSlider class="w-64 flex-shrink-0 justify-between" :menu="menu">
-			<div class="px-6 mb-6">
-				<SelectLang :float="true"/>
-			</div>
-		</WindmillSlider>
-		<div class="flex flex-col flex-1 w-full">
-			<MainHeader :profil-image="profil_image"/>
-			<!-- <WindmillHeader :profil-image="profil_image"/> -->
-			<main class="h-full overflow-y-auto">
-				<slot></slot>
-			</main>
-		</div>
-	</div>
+    
 </template>
